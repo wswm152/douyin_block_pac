@@ -15,12 +15,10 @@ var douyin=[
 var block = 'PROXY 0.0.0.0:80;';
 var direct = 'DIRECT;';
 function FindProxyForURL(url, host) {
-	for(i in douyin){
-		// block by domain
-		if(isdouyin(host)){
-		
+	
+		if(isdouyin(host)&&iscctime()){
 			return block;
-		};
+		
 	};
 		return direct;
     
@@ -33,4 +31,7 @@ for(i in douyin){
 		};
 	};
 	return false;
+}
+function iscctime(){
+return timeRange(17,30,17,59)||timeRange(18,30,18,59)||timeRange(19,30,19,59)||timeRange(20,30,20,59)||timeRange(21,30,21,59);
 }
